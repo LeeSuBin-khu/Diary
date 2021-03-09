@@ -1,0 +1,91 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="계정"> //디자인 미완성
+
+        <EditTextPreference
+            app:key="name_setting"
+            app:title="닉네임 설정"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="day_setting"
+            app:title="D - Day"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="code_setting"
+            app:title="개인코드"
+            app:summary="#111111"/> //개인코드 미완성
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="앱 설정">
+
+        <SwitchPreferenceCompat
+            app:key="notification_setting"
+            app:title="알림 설정"/>
+
+        <ListPreference
+            app:key="sound_setting"
+            app:title="알림음"
+            app:entries="@array/sound_list"
+            app:entryValues="@array/sound_list"
+            app:defaultValue="기본음"
+            app:useSimpleSummaryProvider="true"
+            app:dependency="notification_setting"/>
+
+        <ListPreference
+            app:key="text_setting"
+            app:title="글자 크기"
+            app:entries="@array/textsize_list"
+            app:entryValues="@array/textsize_list"
+            app:defaultValue="보통"
+            app:useSimpleSummaryProvider="true"/>
+
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="보안" >
+
+        <SwitchPreferenceCompat
+            app:key="security_setting"
+            app:title="잠금 설정"/>
+
+        <Preference
+            app:key="password_setting"
+            app:title="비밀번호 변경"
+            app:dependency="security_setting"/>  //비밀번호 변경 미완성
+
+        <SwitchPreferenceCompat
+            app:key="biolock_setting"
+            app:title="생체인식"
+            app:dependency="security_setting"/>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="고객 지원">
+
+        <Preference
+            app:key="helper_setting"
+            app:title="도움말"/>
+
+        <Preference
+            app:key="chat_setting"
+            app:title="문의하기"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="앱 정보">
+
+        <Preference
+            app:key="version_setting"
+            app:title="버전 정보"
+            app:summary="현재 1.0"/>
+    </PreferenceCategory>
+</PreferenceScreen>
